@@ -1,4 +1,4 @@
-export default {
+var RESOURCES = {
   GDP1PNG: "res/frames/GDP/GDP1.png",
   GDP2PNG: "res/frames/GDP/GDP2.png",
   GDP3PNG: "res/frames/GDP/GDP3.png",
@@ -226,9 +226,12 @@ export default {
   电视黑色底PNG: "res/images/开国大典/电视黑色底.png",
   硝烟PNG: "res/images/开国大典/硝烟.png",
   老电视PNG: "res/images/开国大典/老电视.png",
+  "1950年PNG": "res/images/抗美援朝/1950年.png",
   战斗机PNG: "res/images/抗美援朝/战斗机.png",
   抗美援朝PNG: "res/images/抗美援朝/抗美援朝.png",
   抗美援朝背景PNG: "res/images/抗美援朝/抗美援朝背景.png",
   抗美援朝透明背景PNG: "res/images/抗美援朝/抗美援朝透明背景.png",
   鸭绿江PNG: "res/images/抗美援朝/鸭绿江.png"
 };
+
+export default RESOURCES;

@@ -29,5 +29,32 @@ module.exports = {
    * <% }); %>
    * };
    */
-  resourceTemplate: "" //为空会使用默认模版
+  resourceTemplate: "", //为空会使用默认模版
+  /**
+   * tileset 通用配置，会 Assign 这个，对于多个 tileset 较友好
+   */
+  tilesetDefault: {
+    fold: "res/frames", //默认为：{appFold}/res/images，自定义如：res/images/animals
+    name: "", //默认为：tileset
+    trim: false, //是否移除图片周边的透明空白，默认为：false
+    padding: 2, //图片与图片的间距，默认为：0
+    outFold: "res/frames/tilesets" //默认为：{appFold}/res/tileset
+  }
+
+  // tileset: [
+  //   {
+  //     fold: "res/frames/flag",
+  //     name: "flag",
+  //     trim: false,
+  //     padding: 2,
+  //     outFold: "res/frames/flag"
+  //   },
+  //   {
+  //     fold: "res/frames/constitution",
+  //     name: "constitution",
+  //     trim: false,
+  //     padding: 2,
+  //     outFold: "res/frames/constitution"
+  //   }
+  // ]
 };

@@ -1,6 +1,6 @@
 import resources from "./resources";
 import MainMenuLayer from "./game/MainMenuLayer";
-import SceneLayer1 from "./game/sceneLayer1";
+import RootScene from "./game/rootLayer";
 require("./css/index.less");
 
 Tiny.app = new Tiny.Application({
@@ -37,9 +37,9 @@ const main = {
         const body = document.body;
         body.removeChild(percent);
         body.removeChild(progress.parentNode);
-        const sceneLayer1 = new SceneLayer1();
+        const rootScene = new RootScene();
         // const mainMenuLayer = new MainMenuLayer();
-        Tiny.app.run(sceneLayer1);
+        Tiny.app.run(rootScene);
         // mainMenuLayer.emit("transitionend");
       }
     });
