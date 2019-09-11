@@ -10,43 +10,61 @@ export default class Scene4 extends BaseLayer {
           height: this.stageHeight
         }
       },
+      cover: {
+        resource: "首部宪法（背景）PNG",
+        size: {
+          width: this.stageWidth,
+          height: 327 * 2
+        },
+        position: {
+          x: 0,
+          y: 300
+        },
+        animations: []
+      },
       title: {
         resource: "首部宪法诞生PNG",
         size: {
-          width: 446,
-          height: 117
+          width: 273 * 2,
+          height: 50 * 2
+        },
+        position: {
+          x: 50,
+          y: 50
         },
         animations: []
       },
       time: {
         resource: "1954年PNG",
         size: {
-          width: 290,
-          height: 80
+          width: 126 * 2,
+          height: 35 * 2
+        },
+        position: {
+          x: 50,
+          y: 200
         },
         animations: []
       },
       area: {
         resource: "北京PNG",
         size: {
-          width: 312,
-          height: 80
+          width: 128 * 2,
+          height: 33 * 2
+        },
+        position: {
+          x: 50,
+          y: 300
         },
         animations: []
       },
-      boom: {
+      constitution: {
         frames: {
-          key: "boom",
-          type: "transform",
-          startY: this.stageHeight * 3 - 200,
-          endY: this.stageHeight * 3,
-          length: 19
+          key: "constitution",
+          type: "frames",
+          length: 3
         },
-        size: {
-          width: this.stageWidth,
-          height: this.stageHeight
-        },
-        animations: []
+        size: { width: this.stageWidth, height: this.stageHeight }
       }
     };
     this.initSprites(this.sprites);

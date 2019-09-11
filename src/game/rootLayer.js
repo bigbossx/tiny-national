@@ -92,7 +92,7 @@ export default class RootScene extends Tiny.Container {
     });
   }
   changeScene(top) {
-    if (top > Tiny.WIN_SIZE.height * 3) {
+    if (top > Tiny.WIN_SIZE.height * 1) {
       this.position.y = -(
         Math.ceil(top / Tiny.WIN_SIZE.height) * Tiny.WIN_SIZE.height
       );

@@ -31,6 +31,7 @@ export default class BaseLayer extends Tiny.Container {
         mc.animationSpeed = 0.08;
         this.setSize(mc, item.size);
         this.setPosition(mc, item.position);
+        this.setAnchor(mc, item.anchor);
         this.setAnimation(mc, item.animations);
         if (item.frames.type === "transform") {
           //转场动画
@@ -54,6 +55,7 @@ export default class BaseLayer extends Tiny.Container {
         this.setPosition(sprites, item.position);
         this.setSize(sprites, item.size);
         this.setAnchor(sprites, item.anchor);
+        this.setRotation(sprites, item.rotation);
         this.setAnimation(sprites, item.animations);
         this.addChild(sprites);
       }
@@ -83,6 +85,12 @@ export default class BaseLayer extends Tiny.Container {
       }
     });
   }
+  setRotation(sprites, deg) {
+    if (!deg) {
+      return;
+    }
+    sprites.setRotation(Tiny.deg2radian(deg));
+  }
   setPosition(sprites, position) {
     if (!position) {
       return;
@@ -101,7 +109,6 @@ export default class BaseLayer extends Tiny.Container {
     if (!anchor) {
       return;
     }
-    sprites.anchor = anchor.x;
-    sprites.anchor.anchor.y;
+    sprites.setAnchor(anchor.x, anchor.y);
   }
 }

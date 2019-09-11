@@ -33,12 +33,16 @@ export default class Scene1 extends BaseLayer {
           width: 394,
           height: 220
         },
+        position: {
+          x: 50,
+          y: 50
+        },
         animations: [
           {
             delay: 100,
             duration: this.stageHeight,
             from: {
-              y: 0
+              y: 50
             },
             to: { y: this.stageHeight }
           }
@@ -50,6 +54,10 @@ export default class Scene1 extends BaseLayer {
           width: 484,
           height: 70
         },
+        position: {
+          x: 50,
+          y: 300
+        },
         animations: []
       },
       area: {
@@ -57,6 +65,10 @@ export default class Scene1 extends BaseLayer {
         size: {
           width: 256,
           height: 66
+        },
+        position: {
+          x: 50,
+          y: 400
         },
         animations: []
       }
