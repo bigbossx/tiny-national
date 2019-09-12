@@ -28,6 +28,7 @@ export default class Scene3 extends BaseLayer {
           width: 676,
           height: 172
         },
+        action: true,
         position: {
           x: 50,
           y: 50
@@ -68,7 +69,16 @@ export default class Scene3 extends BaseLayer {
           x: 0,
           y: 550
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 2,
+            duration: this.stageHeight * 0.5,
+            from: {
+              x: this.stageWidth
+            },
+            to: { x: 0 }
+          }
+        ]
       },
       name: {
         resource: "解放CA10(文字)PNG",
@@ -91,20 +101,6 @@ export default class Scene3 extends BaseLayer {
         position: {
           x: 200,
           y: this.stageHeight - 150
-        },
-        animations: []
-      },
-      boom: {
-        frames: {
-          key: "boom",
-          type: "transform",
-          startY: this.stageHeight,
-          endY: this.stageHeight * 1 + 200,
-          length: 19
-        },
-        size: {
-          width: this.stageWidth,
-          height: this.stageHeight
         },
         animations: []
       }

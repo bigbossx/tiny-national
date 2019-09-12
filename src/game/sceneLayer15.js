@@ -1,5 +1,5 @@
 import BaseLayer from "./baseLayer";
-export default class Scene13 extends BaseLayer {
+export default class Scene15 extends BaseLayer {
   constructor() {
     super();
     this.sprites = {
@@ -11,16 +11,24 @@ export default class Scene13 extends BaseLayer {
         }
       },
       cover: {
-        resource: "奥运背景PNG",
+        resource: "第一艘航母背景PNG",
         size: {
           width: this.stageWidth,
           height: this.stageHeight
+        },
+        position: {
+          x: 0,
+          y: this.stageHeight
+        },
+        anchor: {
+          x: 0,
+          y: 1
         }
       },
       title: {
-        resource: "首次举办奥运会北京奥运会PNG",
+        resource: "第一艘航空母舰辽宁号开始服役PNG",
         size: {
-          width: 267 * 2,
+          width: 272 * 2,
           height: 97 * 2
         },
         position: {
@@ -30,10 +38,10 @@ export default class Scene13 extends BaseLayer {
         animations: []
       },
       time: {
-        resource: "2008PNG",
+        resource: "2012PNG",
         size: {
           width: 115 * 2,
-          height: 32 * 2
+          height: 33 * 2
         },
         position: {
           x: 50,
@@ -41,63 +49,54 @@ export default class Scene13 extends BaseLayer {
         },
         animations: []
       },
-      area: {
-        resource: "北京PNG",
+      frigate: {
+        resource: "护卫舰PNG",
         size: {
-          width: 128 * 2,
-          height: 33 * 2
+          width: 198 * 2,
+          height: 34 * 2
         },
         position: {
-          x: 50,
-          y: 400
-        },
-        animations: []
-      },
-      birdNest: {
-        resource: "鸟巢PNG",
-        size: {
-          width: 372 * 2,
-          height: 334 * 2
-        },
-        position: {
-          x: 0,
-          y: 400
-        },
-        animations: []
-      },
-      waterCube: {
-        resource: "水立方PNG",
-        size: {
-          width: this.stageWidth,
-          height: 237 * 2
-        },
-        position: {
-          x: this.stageWidth,
-          y: this.stageHeight
+          x: this.stageWidth / 2,
+          y: this.stageHeight / 2
         },
         anchor: {
-          x: 1,
-          y: 1
+          x: 0.5,
+          y: 0.7
         },
         animations: []
       },
-      torch: {
+      name: {
+        resource: "辽宁号航空母舰PNG",
+        size: {
+          width: 154 * 2,
+          height: 29 * 2
+        },
+        position: {
+          x: this.stageWidth / 2,
+          y: this.stageHeight / 2
+        },
+        anchor: {
+          x: 0.5,
+          y: 0
+        }
+      },
+      warship: {
         frames: {
-          key: "火炬",
+          key: "辽宁号",
           type: "frames",
-          length: 4
+          length: 6
         },
         size: {
-          width: 148 * 2,
-          height: 442 * 2
+          width: 874 * 2,
+          height: 184 * 2
         },
         position: {
-          x: this.stageWidth,
-          y: this.stageHeight
+          x: this.stageWidth / 2,
+          y: this.stageHeight / 2
         },
         anchor: {
-          x: 1,
-          y: 1
+          x: 0.5,
+          y: 0
         },
         animations: []
       }

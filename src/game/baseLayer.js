@@ -16,6 +16,7 @@ export default class BaseLayer extends Tiny.Container {
     const { resources, Sprite, AnimatedSprite, Texture } = Tiny;
 
     Object.values(sprites).forEach(item => {
+      let sprites = null;
       if (item.frames) {
         // 声明一个数组，用于存放序列帧图的纹理
         let textures = [];
@@ -26,39 +27,45 @@ export default class BaseLayer extends Tiny.Container {
           );
         }
         // 这个纹理数组就是类初始化的入参
-        let mc = new AnimatedSprite(textures);
+        sprites = new AnimatedSprite(textures);
         // 设置动画速度，值越大速度越快
-        mc.animationSpeed = 0.08;
-        this.setSize(mc, item.size);
-        this.setPosition(mc, item.position);
-        this.setAnchor(mc, item.anchor);
-        this.setAnimation(mc, item.animations);
+        sprites.animationSpeed = 0.08;
+
         if (item.frames.type === "transform") {
           //转场动画
+          sprites.alpha = 0;
           const { startY, endY, length } = item.frames;
           let interval = (endY - startY) / length;
           eventBus.on("onprogress", progess => {
             if (progess >= startY && progess <= endY) {
+              sprites.alpha = 1;
               let curIndex = Math.ceil(progess - startY) / interval;
-              console.log(curIndex);
-              mc.gotoAndStop(curIndex);
+              console.log(`当前是转场动画第${curIndex}帧`);
+              sprites.gotoAndStop(curIndex);
+            } else {
+              sprites.alpha = 0;
             }
           });
         } else {
           // 立即播放
-          mc.play();
+          sprites.play();
         }
-
-        this.addChild(mc);
+      } else if (item.text) {
+        sprites = new Tiny.Text(item.text, item.style);
       } else {
-        const sprites = Sprite.fromImage(resources[item.resource]);
-        this.setPosition(sprites, item.position);
-        this.setSize(sprites, item.size);
-        this.setAnchor(sprites, item.anchor);
-        this.setRotation(sprites, item.rotation);
-        this.setAnimation(sprites, item.animations);
-        this.addChild(sprites);
+        sprites = Sprite.fromImage(resources[item.resource]);
       }
+      this.setSize(sprites, item.size);
+
+      this.setPosition(sprites, item.position);
+      this.setAnchor(sprites, item.anchor);
+      this.setRotation(sprites, item.rotation);
+      this.setAnimation(sprites, item.animations);
+      if (item.action) {
+        const action = Tiny.MoveBy(1000, Tiny.point(10, 10));
+        sprites.runAction(Tiny.RepeatForever(Tiny.Back(action)));
+      }
+      this.addChild(sprites);
     });
   }
   setAnimation(obj, animations) {
@@ -67,8 +74,8 @@ export default class BaseLayer extends Tiny.Container {
     }
     animations.forEach(({ from, to, duration, delay }) => {
       let action;
-      duration = duration / (Tiny.WIN_SIZE.height * 13);
-      delay = delay / (Tiny.WIN_SIZE.height * 13);
+      duration = duration / (Tiny.WIN_SIZE.height * 14);
+      delay = delay / (Tiny.WIN_SIZE.height * 14);
       console.log(duration, delay);
       if (from && to) {
         action = TweenMax.fromTo(obj, duration, from, to);
@@ -95,8 +102,7 @@ export default class BaseLayer extends Tiny.Container {
     if (!position) {
       return;
     }
-    sprites.position.x = position.x;
-    sprites.position.y = position.y;
+    sprites.setPosition(position.x, position.y);
   }
   setSize(sprites, size) {
     if (!size) {

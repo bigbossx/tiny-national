@@ -16,6 +16,7 @@ import Scene11Layer from "./sceneLayer11";
 import Scene12Layer from "./sceneLayer12";
 import Scene13Layer from "./sceneLayer13";
 import Scene14Layer from "./sceneLayer14";
+import Scene15Layer from "./sceneLayer15";
 const sceneList = [
   Scene1Layer,
   Scene2Layer,
@@ -30,7 +31,8 @@ const sceneList = [
   Scene11Layer,
   Scene12Layer,
   Scene13Layer,
-  Scene14Layer
+  Scene14Layer,
+  Scene15Layer
 ];
 import MyTimeLine from "./timeline";
 export default class RootScene extends Tiny.Container {
@@ -92,9 +94,15 @@ export default class RootScene extends Tiny.Container {
     });
   }
   changeScene(top) {
+    // top = Tiny.WIN_SIZE.height * 14;
+    console.log(
+      "当前滚动距离%c" + top,
+      "color: #fff; font-style: italic; background-color: red;padding: 5px",
+      "滚动屏数" + Math.floor(top / Tiny.WIN_SIZE.height)
+    );
     if (top > Tiny.WIN_SIZE.height * 1) {
       this.position.y = -(
-        Math.ceil(top / Tiny.WIN_SIZE.height) * Tiny.WIN_SIZE.height
+        Math.floor(top / Tiny.WIN_SIZE.height) * Tiny.WIN_SIZE.height
       );
     } else {
       this.position.y = -top;

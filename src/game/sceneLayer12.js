@@ -10,29 +10,68 @@ export default class Scene12 extends BaseLayer {
           height: this.stageHeight
         }
       },
-      title: {
-        resource: "首次举办奥运会北京奥运会PNG",
+      cover: {
+        resource: "飞船背景PNG",
         size: {
-          width: 446,
-          height: 117
+          width: this.stageWidth,
+          height: this.stageHeight
+        }
+      },
+      title: {
+        resource: "首次成功发射载人宇宙飞船神舟五号PNG",
+        size: {
+          width: 227 * 2,
+          height: 145 * 2
+        },
+        position: {
+          x: 50,
+          y: 50
         },
         animations: []
       },
       time: {
-        resource: "1950年PNG",
+        resource: "2003PNG",
         size: {
-          width: 290,
-          height: 80
+          width: 115 * 2,
+          height: 31 * 2
+        },
+        position: {
+          x: 50,
+          y: 145 * 2 + 100
         },
         animations: []
       },
-      area: {
-        resource: "鸭绿江PNG",
+      rocket: {
+        frames: {
+          key: "火箭",
+          type: "frames",
+          length: 4
+        },
         size: {
-          width: 312,
-          height: 80
+          width: 50 * 2,
+          height: 394 * 2
+        },
+        position: {
+          x: this.stageWidth - 147 * 2,
+          y: this.stageHeight
+        },
+        anchor: {
+          x: 1,
+          y: 1
         },
         animations: []
+      },
+      launch: {
+        resource: "发射台PNG",
+        size: {
+          width: 147 * 2,
+          height: 362 * 2
+        },
+        position: {
+          x: this.stageWidth,
+          y: this.stageHeight
+        },
+        anchor: { x: 1, y: 1 }
       }
     };
     this.initSprites(this.sprites);

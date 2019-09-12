@@ -24,6 +24,7 @@ export default class Scene4 extends BaseLayer {
       },
       title: {
         resource: "首部宪法诞生PNG",
+        action: true,
         size: {
           width: 273 * 2,
           height: 50 * 2
@@ -64,7 +65,17 @@ export default class Scene4 extends BaseLayer {
           type: "frames",
           length: 3
         },
-        size: { width: this.stageWidth, height: this.stageHeight }
+        size: { width: this.stageWidth, height: this.stageHeight },
+        animations: [
+          {
+            delay: this.stageHeight * 3,
+            duration: this.stageHeight * 0.5,
+            from: {
+              "scale.x": 1
+            },
+            to: { "scale.x": 2 }
+          }
+        ]
       }
     };
     this.initSprites(this.sprites);
