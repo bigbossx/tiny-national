@@ -78,7 +78,10 @@ export default class Scene11 extends BaseLayer {
       control: {
         frames: {
           key: "遥控器",
-          type: "frames",
+          type: "transform",
+          reverse: true,
+          startY: this.stageHeight * 10.5,
+          endY: this.stageHeight * 11,
           length: 17
         },
         size: { width: this.stageWidth, height: this.stageHeight },

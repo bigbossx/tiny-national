@@ -53,18 +53,34 @@ export default class Scene9 extends BaseLayer {
         },
         animations: []
       },
-      medal: {
-        resource: "金牌PNG",
-        size: {
-          width: 111 * 2,
-          height: 259 * 2
-        },
+      medalContainer: {
+        child: [
+          {
+            resource: "金牌PNG",
+            size: {
+              width: 111 * 2,
+              height: 259 * 2
+            },
+            position: {
+              x: 0,
+              y: 0
+            }
+          },
+          {
+            frames: {
+              key: "star",
+              type: "frames",
+              length: 4
+            },
+            size: { width: 176 * 2, height: 167 * 2 },
+            position: {
+              x: 0,
+              y: 0
+            }
+          }
+        ],
         position: {
-          x: this.stageWidth,
-          y: 0
-        },
-        anchor: {
-          x: 1,
+          x: 500,
           y: 0
         },
         animations: [
@@ -77,22 +93,6 @@ export default class Scene9 extends BaseLayer {
             }
           }
         ]
-      },
-      star: {
-        frames: {
-          key: "star",
-          type: "frames",
-          length: 4
-        },
-        size: { width: 176 * 2, height: 167 * 2 },
-        position: {
-          x: this.stageWidth,
-          y: 0
-        },
-        anchor: {
-          x: 1,
-          y: 0
-        }
       },
       people: {
         resource: "许海峰PNG",

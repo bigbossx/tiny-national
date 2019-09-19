@@ -105,6 +105,16 @@ export default class Scene3 extends BaseLayer {
         animations: []
       },
       word: {
+        html: `
+        <p>第一辆解放牌汽车下线初期生产的解放
+          <br/>牌的型号是CA10型，包括
+          <span style="color:red;">CA10</span>
+          <span style="color:red;">CA10B</span>
+          <br/>和
+          <span style="color:red;">CA10C</span>
+          等型号
+        </p>
+        `,
         text:
           "第一辆解放牌汽车下线初期生产的解放\n牌的型号是CA10型，包括CA10、CA10B\n和CA10C等型号",
         style: {

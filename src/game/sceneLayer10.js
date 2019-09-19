@@ -53,7 +53,16 @@ export default class Scene10 extends BaseLayer {
           x: 50,
           y: 200
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 9,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
+          }
+        ]
       },
       flag: {
         frames: {
@@ -65,12 +74,23 @@ export default class Scene10 extends BaseLayer {
         position: {
           x: 210,
           y: 400
-        }
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 9,
+            duration: this.stageHeight * 0.5,
+            from: {
+              y: 500
+            }
+          }
+        ]
       },
       control: {
         frames: {
           key: "遥控器",
-          type: "frames",
+          type: "transform",
+          startY: this.stageHeight * 9.5,
+          endY: this.stageHeight * 10,
           length: 17
         },
         size: { width: this.stageWidth, height: this.stageHeight },

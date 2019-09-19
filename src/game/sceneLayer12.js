@@ -59,7 +59,15 @@ export default class Scene12 extends BaseLayer {
           x: 1,
           y: 1
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 11,
+            duration: 400,
+            to: {
+              y: this.stageHeight - 400
+            }
+          }
+        ]
       },
       launch: {
         resource: "发射台PNG",
