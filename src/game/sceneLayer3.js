@@ -103,6 +103,29 @@ export default class Scene3 extends BaseLayer {
           y: this.stageHeight - 150
         },
         animations: []
+      },
+      word: {
+        text:
+          "第一辆解放牌汽车下线初期生产的解放\n牌的型号是CA10型，包括CA10、CA10B\n和CA10C等型号",
+        style: {
+          fontSize: 36,
+          lineHeight: 50,
+          fill: "#ffffff"
+        },
+        position: {
+          x: 50,
+          y: 400
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 2,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
+          }
+        ]
       }
     };
     this.initSprites(this.sprites);

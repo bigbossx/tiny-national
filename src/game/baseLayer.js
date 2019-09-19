@@ -72,17 +72,20 @@ export default class BaseLayer extends Tiny.Container {
     if (!animations || !animations.length) {
       return;
     }
-    animations.forEach(({ from, to, duration, delay }) => {
+    animations.forEach(({ from, to, duration, animationAttr, delay }) => {
+      let sprites = obj;
       let action;
-      duration = duration / (Tiny.WIN_SIZE.height * 14);
-      delay = delay / (Tiny.WIN_SIZE.height * 14);
-      console.log(duration, delay);
+      if (animationAttr) {
+        sprites = sprites[animationAttr];
+      }
+      duration = duration / (Tiny.WIN_SIZE.height * 15);
+      delay = delay / (Tiny.WIN_SIZE.height * 15);
       if (from && to) {
-        action = TweenMax.fromTo(obj, duration, from, to);
+        action = TweenMax.fromTo(sprites, duration, from, to);
       } else if (to) {
-        action = TweenMax.to(obj, duration, to);
+        action = TweenMax.to(sprites, duration, to);
       } else if (from) {
-        action = TweenMax.from(obj, duration, from);
+        action = TweenMax.from(sprites, duration, from);
       }
       const timeline = new TimelineMax({ delay });
       timeline.add(action, 0);

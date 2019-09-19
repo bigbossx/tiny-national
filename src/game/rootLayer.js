@@ -100,6 +100,9 @@ export default class RootScene extends Tiny.Container {
       "color: #fff; font-style: italic; background-color: red;padding: 5px",
       "滚动屏数" + Math.floor(top / Tiny.WIN_SIZE.height)
     );
+    if (top >= this.height) {
+      return;
+    }
     if (top > Tiny.WIN_SIZE.height * 1) {
       this.position.y = -(
         Math.floor(top / Tiny.WIN_SIZE.height) * Tiny.WIN_SIZE.height
@@ -132,7 +135,7 @@ export default class RootScene extends Tiny.Container {
       Tiny.WIN_SIZE.width,
       Tiny.WIN_SIZE.height,
       this.width,
-      this.height
+      this.height + Tiny.WIN_SIZE.height
     );
     // 设置 container 可交互
   }

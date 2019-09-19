@@ -66,14 +66,56 @@ export default class Scene4 extends BaseLayer {
           length: 3
         },
         size: { width: this.stageWidth, height: this.stageHeight },
+        anchor: {
+          x: 0.5,
+          y: 0.5
+        },
+        position: {
+          x: this.stageWidth / 2,
+          y: this.stageHeight / 2
+        },
         animations: [
           {
             delay: this.stageHeight * 3,
             duration: this.stageHeight * 0.5,
+            animationAttr: "scale",
             from: {
-              "scale.x": 1
+              x: 1,
+              y: 1
             },
-            to: { "scale.x": 2 }
+            to: {
+              x: 1.5,
+              y: 1.5
+            }
+          },
+          {
+            delay: this.stageHeight * 3.5,
+            duration: this.stageHeight * 0.5,
+            to: {
+              y: this.stageHeight
+            }
+          }
+        ]
+      },
+      word: {
+        text: "继承了共同纲领的建国目标，奠定了新\n中国的基本政治和法律制度",
+        style: {
+          fontSize: 36,
+          lineHeight: 50,
+          fill: "#ffffff"
+        },
+        position: {
+          x: 50,
+          y: 400
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 3,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
           }
         ]
       }

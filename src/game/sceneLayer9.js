@@ -67,7 +67,16 @@ export default class Scene9 extends BaseLayer {
           x: 1,
           y: 0
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 8,
+            duration: this.stageHeight * 0.5,
+            from: {
+              y: -this.stageHeight,
+              alpha: 0
+            }
+          }
+        ]
       },
       star: {
         frames: {
@@ -85,13 +94,13 @@ export default class Scene9 extends BaseLayer {
           y: 0
         }
       },
-
       people: {
         resource: "许海峰PNG",
         size: {
           width: 700,
           height: 622
         },
+        action: true,
         position: {
           x: 0,
           y: this.stageHeight
@@ -101,6 +110,28 @@ export default class Scene9 extends BaseLayer {
           y: 1
         },
         animations: []
+      },
+      word: {
+        text: "射击运动员许海峰以566环成绩拿下男子\n自选手枪60发漫射冠军。",
+        style: {
+          fontSize: 36,
+          lineHeight: 50,
+          fill: "#ffffff"
+        },
+        position: {
+          x: 50,
+          y: 600
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 8,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
+          }
+        ]
       }
     };
     this.initSprites(this.sprites);

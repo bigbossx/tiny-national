@@ -69,6 +69,29 @@ export default class Scene8 extends BaseLayer {
           y: 700
         },
         animations: []
+      },
+      word: {
+        text:
+          "1979年7月15日，中央正式批准广东、福建\n两省在对外经济活动中实行特殊政策、灵\n活措施，迈开了改革开放的历史性脚步。",
+        style: {
+          fontSize: 36,
+          lineHeight: 50,
+          fill: "#ffffff"
+        },
+        position: {
+          x: 50,
+          y: this.stageHeight - 400
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 7,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
+          }
+        ]
       }
     };
     this.initSprites(this.sprites);

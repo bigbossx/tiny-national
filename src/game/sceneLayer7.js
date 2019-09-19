@@ -27,6 +27,7 @@ export default class Scene7 extends BaseLayer {
           width: 173 * 2,
           height: 47 * 2
         },
+        action: true,
         position: {
           x: 50,
           y: 100
@@ -61,11 +62,30 @@ export default class Scene7 extends BaseLayer {
           height: 564
         },
         position: {
-          x: -50,
-          y: this.stageHeight - 300
+          x: 200,
+          y: this.stageHeight
+        },
+        anchor: {
+          x: 0.5,
+          y: 0.5
         },
         rotation: -10,
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 6,
+            duration: 100,
+            from: {
+              rotation: 0
+            }
+          },
+          {
+            delay: this.stageHeight * 6,
+            duration: 50,
+            from: {
+              y: this.stageHeight + 300
+            }
+          }
+        ]
       },
       certificate2: {
         resource: "准考证JPG",
@@ -74,11 +94,62 @@ export default class Scene7 extends BaseLayer {
           height: 564 * 2
         },
         position: {
-          x: this.stageWidth / 4,
-          y: this.stageHeight - 600
+          x: this.stageWidth,
+          y: this.stageHeight - 100
+        },
+        anchor: {
+          x: 0.5,
+          y: 0.5
         },
         rotation: -20,
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 6,
+            duration: 100,
+            from: {
+              rotation: 0
+            }
+          },
+          {
+            delay: this.stageHeight * 6,
+            duration: 50,
+            from: {
+              y: this.stageHeight + 300
+            }
+          }
+        ]
+      },
+      write: {
+        frames: {
+          key: "写字",
+          type: "frames",
+          length: 3
+        },
+        size: { width: 80, height: 86 },
+        position: { x: 230, y: 560 }
+      },
+      word: {
+        text:
+          "高考制度的恢复，改变了几代人的命运，使\n中国的人才培养重新步入健康的发展轨道。",
+        style: {
+          fontSize: 36,
+          lineHeight: 50,
+          fill: "#ffffff"
+        },
+        position: {
+          x: 50,
+          y: 400
+        },
+        animations: [
+          {
+            delay: this.stageHeight * 6,
+            duration: this.stageHeight * 0.1,
+            from: {
+              alpha: 0
+            },
+            to: { alpha: 1 }
+          }
+        ]
       }
     };
     this.initSprites(this.sprites);

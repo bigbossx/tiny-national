@@ -29,10 +29,30 @@ export default class Scene5 extends BaseLayer {
           height: 1106
         },
         position: {
-          x: 50,
-          y: 300
+          x: this.stageWidth - 100,
+          y: 700
         },
-        rotation: -15
+        anchor: {
+          x: 0.5,
+          y: 0.5
+        },
+        rotation: -15,
+        animations: [
+          {
+            delay: this.stageHeight * 4 + 50,
+            duration: 50,
+            from: {
+              rotation: 180
+            }
+          },
+          {
+            delay: this.stageHeight * 4 + 50,
+            duration: 50,
+            from: {
+              x: this.stageWidth * 2
+            }
+          }
+        ]
       },
       yuanzidan: {
         frames: {
@@ -41,7 +61,16 @@ export default class Scene5 extends BaseLayer {
           length: 6
         },
         size: { width: this.stageWidth / 2, height: 604 },
-        position: { x: 0, y: 500 }
+        position: { x: 0, y: 500 },
+        animations: [
+          {
+            delay: this.stageHeight * 4,
+            duration: 300,
+            from: {
+              x: this.stageWidth
+            }
+          }
+        ]
       },
       qingdan: {
         frames: {
@@ -50,7 +79,16 @@ export default class Scene5 extends BaseLayer {
           length: 4
         },
         size: { width: this.stageWidth, height: 746 },
-        position: { x: 150, y: 300 }
+        position: { x: 150, y: 300 },
+        animations: [
+          {
+            delay: this.stageHeight * 4 + 300,
+            duration: 50,
+            from: {
+              y: this.stageHeight
+            }
+          }
+        ]
       },
       bottom: {
         resource: "戈壁滩PNG",
@@ -65,6 +103,7 @@ export default class Scene5 extends BaseLayer {
       },
       title: {
         resource: "第一颗原子弹&氢弹爆炸成功PNG",
+        action: true,
         size: {
           width: 492,
           height: 266
@@ -85,7 +124,15 @@ export default class Scene5 extends BaseLayer {
           x: 100,
           y: this.stageHeight - 372 - 112
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 4,
+            duration: 300,
+            from: {
+              x: this.stageWidth
+            }
+          }
+        ]
       },
       time2: {
         resource: "1967PNG",
@@ -97,7 +144,15 @@ export default class Scene5 extends BaseLayer {
           x: this.stageWidth - 252 - 50,
           y: this.stageHeight - 372
         },
-        animations: []
+        animations: [
+          {
+            delay: this.stageHeight * 4 + 300,
+            duration: 50,
+            from: {
+              y: this.stageHeight
+            }
+          }
+        ]
       },
       area: {
         resource: "罗布泊PNG",
