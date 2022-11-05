@@ -33,7 +33,7 @@
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "style-loader": "^0.20.3",
     "tinyjs-plugin-scroller": "^0.1.1",
-    "tinyjs-resource-loader": "^0.2.6",
+    "tinyjs-resource-loader": "^3.1.0",
     "tinyjs-types": "^0.1.2",
     "webpack": "^4.5.0",
     "webpack-build-notifier": "^1.1.1",
